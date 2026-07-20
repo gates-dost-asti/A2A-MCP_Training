@@ -14,21 +14,19 @@ https://gates-dost-asti.github.io/A2A-MCP_Training/
 
 ## Setup
 
-1. **Python 3.11–3.13** (the A2A track's `beeai-framework` requires <3.14; MCP and A2A SDKs require 3.10+).
-2. Clone this repo and create a virtual environment:
+1. **Install VS Code** — [code.visualstudio.com](https://code.visualstudio.com/), then add the **Python** and **Jupyter** extensions.
+2. **Install Miniconda** — [docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html).
+3. Clone this repo and create the conda environment:
 
    ```bash
    git clone https://github.com/gates-dost-asti/A2A-MCP_Training.git
    cd A2A-MCP_Training
-   python3 -m venv .venv
-   source .venv/bin/activate   # Windows: .venv\Scripts\activate
-   ```
-
-3. Install dependencies:
-
-   ```bash
+   conda create -n a2a-mcp-training python=3.12
+   conda activate a2a-mcp-training
    pip install -r requirements.txt
    ```
+
+   `requirements.txt` is still being finalized and may change before the workshop — re-run `pip install -r requirements.txt` if you're told it's been updated.
 
 4. Register the environment with Jupyter:
 
@@ -36,6 +34,7 @@ https://gates-dost-asti.github.io/A2A-MCP_Training/
    python -m ipykernel install --user --name a2a-mcp-training
    ```
 
-5. During the workshop, connect to the training VPN to reach the LLM gateway the notebooks call. To run notebooks outside the training room, edit `BASE_URL` in the relevant track's `gates_openai.py` to point at your own OpenAI-compatible endpoint.
+5. **Install Node.js** — [nodejs.org](https://nodejs.org/) (LTS version), required by some MCP tooling.
+6. During the workshop, connect to the training VPN to reach the LLM gateway the notebooks call. To run notebooks outside the training room, edit `BASE_URL` in the relevant track's `gates_openai.py` to point at your own OpenAI-compatible endpoint.
 
 For the full setup guide with troubleshooting, see the [Setup page](https://gates-dost-asti.github.io/A2A-MCP_Training/setup.html) on the training site.
