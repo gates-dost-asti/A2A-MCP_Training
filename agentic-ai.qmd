@@ -1,0 +1,19 @@
+---
+title: "Agentic AI"
+---
+
+Five modules covering agentic workflow fundamentals through highly autonomous agents. Modules 2, 3, and 5 include hands-on exercises; worked answers are on the [Solutions](solutions/index.qmd) page.
+
+## Modules
+
+| Module | Notebook(s) | Lecture Deck |
+|--------|-------------|--------------|
+| 1 – Introduction to Agentic Workflows | *(lecture only)* | [PDF](<Presentations/01 - Agentic AI Module 1.pdf>) |
+| 2 – Reflection Design Pattern | [Exercise notebook](<Workshop Materials/Agentic AI/Module2/Module-2.ipynb>) · [Try-out](<Workshop Materials/Agentic AI/Module2/tryout-1.ipynb>) | [PDF](<Presentations/02 - Agentic AI Module 2.pdf>) |
+| 3 – Tool Use | [Exercise notebook](<Workshop Materials/Agentic AI/Module3/Module-3.ipynb>) | [PDF](<Presentations/03 - Agentic AI Module 3.pdf>) |
+| 4 – Practical Tips (Evals) | [Try-out](<Workshop Materials/Agentic AI/Module4/tryout-1.ipynb>) | [PDF](<Presentations/04 - Agentic AI Module 4.pdf>) |
+| 5 – Patterns for Highly Autonomous Agents | [Exercise notebook](<Workshop Materials/Agentic AI/Module5/Module-5.ipynb>) | [PDF](<Presentations/05 - Agentic AI Module 5.pdf>) |
+
+::: {.callout-note}
+The notebooks call an OpenAI-compatible gateway (`gates_openai.py`) that is only reachable through the training VPN. To run them outside the training room, point `BASE_URL` at your own OpenAI-compatible endpoint.
+:::

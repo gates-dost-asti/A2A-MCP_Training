@@ -1,0 +1,61 @@
+---
+title: "Agentic AI: A2A & MCP Training"
+subtitle: "Agent-to-Agent (A2A) and Model Context Protocol (MCP) Training"
+toc: false
+---
+
+**27 July 2026, 9:00 AM – 5:00 PM**
+Training Room, DOST-ASTI, Diliman, Quezon City
+
+This site hosts all materials for the one-day training on Agentic AI, the Model Context Protocol (MCP), and the Agent-to-Agent (A2A) Protocol: hands-on notebooks, lecture decks, and exercise solutions.
+
+[Official Program (PDF)](<Program - A2A & MCP Training.pdf>){.btn .btn-primary} [Setup Guide](setup.qmd){.btn .btn-outline-primary} [Browse Materials](agentic-ai.qmd){.btn .btn-outline-primary}
+
+## Program
+
+| Time | Activity |
+|------|----------|
+| 8:30 – 9:00 AM | Registration / Setting up of coding environment |
+| 9:00 – 9:05 AM | Opening Message |
+| 9:05 – 9:35 AM | Lecture: Agentic AI Module 1 – Introduction to Agentic Workflows |
+| 9:35 – 10:35 AM | Lecture & Exercise: Agentic AI Module 2 – Reflection Design Pattern |
+| 10:35 – 11:30 AM | Lecture & Exercise: Agentic AI Module 3 – Tool Use *(working AM snacks)* |
+| 11:30 AM – 12:00 NN | Lecture: Agentic AI Module 4 – Practical Tips for Building Agentic AI |
+| 12:00 NN – 1:00 PM | Lunch |
+| 1:00 – 2:00 PM | Lecture & Exercise: Agentic AI Module 5 – Patterns for Highly Autonomous Agents |
+| 2:00 – 3:30 PM | Lecture: Model Context Protocol *(working PM snacks)* |
+| 3:30 – 4:45 PM | Lecture: Agent-to-Agent Protocol |
+| 4:45 – 5:00 PM | Awarding of Certificates / Closing Message |
+
+## Facilitators
+
+**Alvin E. Retamar** — Project Leader, GATES Data Lakehouse Component
+**Jasper Adrian Dwight V. Castro** — Lead AI Engineer, GATES Data Lakehouse Component
+**John Chris T. Kwong** — Co-Project Leader, GATES Data Lakehouse Component
+
+## Tracks
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+### Agentic AI
+Agentic workflows, the reflection design pattern, tool use, evaluation, and autonomous multi-agent patterns.
+
+[Start the track →](agentic-ai.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### Model Context Protocol
+Build a research chatbot, then turn it into an MCP server and client, connect to reference servers, and deploy remotely.
+
+[Start the track →](mcp.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### Agent-to-Agent Protocol
+Build QA and research agents, wrap them with A2A, chain them, and compose a multi-agent healthcare concierge.
+
+[Start the track →](a2a.qmd)
+:::
+
+:::

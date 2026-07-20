@@ -1,0 +1,20 @@
+---
+title: "Agent-to-Agent Protocol"
+---
+
+Six exercises that build a multi-agent healthcare concierge step by step, using the A2A Python SDK.
+
+## Exercises
+
+| Exercise | Notebook(s) |
+|----------|-------------|
+| 1 – Building a QA Agent | [building_qa_agent](<Workshop Materials/A2A/1-BuildingQAAgent/building_qa_agent.ipynb>) |
+| 2 – Wrapping the QA Agent with A2A | [qa_agent_a2a](<Workshop Materials/A2A/2-WrapQAAgentA2A/qa_agent_a2a.ipynb>) · [call_qa_agent](<Workshop Materials/A2A/2-WrapQAAgentA2A/call_qa_agent.ipynb>) |
+| 3 – Health Research Agent | [health_research_agent](<Workshop Materials/A2A/3-HealthResearchAgent/health_research_agent.ipynb>) · [call_health_research_agent](<Workshop Materials/A2A/3-HealthResearchAgent/call_health_research_agent.ipynb>) |
+| 4 – A2A Sequential Chain | [a2a_sequential_chain](<Workshop Materials/A2A/4-A2ASequentialChain/a2a_sequential_chain.ipynb>) |
+| 5 – Healthcare Provider Agent | [healthcare_provider_a2a](<Workshop Materials/A2A/5-HealthcareProviderAgent/healthcare_provider_a2a.ipynb>) · [call_healthcare_provider_agent](<Workshop Materials/A2A/5-HealthcareProviderAgent/call_healthcare_provider_agent.ipynb>) |
+| 6 – Multi-Agent System | [multiagent_bee](<Workshop Materials/A2A/6-MultiAgentSystem/multiagent_bee.ipynb>) |
+
+**Lecture deck:** [Agent-to-Agent Protocol (PDF)](<Presentations/07 - Agent-to-Agent Protocol.pdf>)
+
+**Sample data:** the exercises use `philippines_doctors.json` and a sample insurance policy PDF found in `Workshop Materials/A2A/data/`.

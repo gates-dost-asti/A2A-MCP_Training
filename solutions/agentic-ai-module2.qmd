@@ -1,0 +1,111 @@
+---
+title: "Module 2 Solutions – Reflection Design Pattern"
+---
+
+Notebook: [`Module-2.ipynb`](<../Workshop Materials/Agentic AI/Module2/Module-2.ipynb>)
+
+The three exercises implement the generate → reflect → revise loop. Each one only asks you to write a prompt (and in Exercise 3, also the LLM call).
+
+## Exercise 1: `generate_draft`
+
+::: {.callout-tip collapse="true"}
+## Show solution
+
+```python
+# EXERCISE FUNCTION: generate_draft
+
+def generate_draft(topic: str, model: str = "gpt-4o-mini") -> str:
+
+    ### START CODE HERE ###
+
+    prompt = f"""Write a complete, well-structured draft essay on the following topic:
+
+Topic: {topic}
+
+The essay should have a clear introduction, body paragraphs with supporting
+arguments, and a conclusion. Write in a formal, academic tone."""
+
+    ### END CODE HERE ###
+
+    response = create_response(
+        model=model,
+        input=[{"role": "user", "content": prompt}],
+        temperature=1.0,
+    )
+
+    return response.output_text
+```
+
+The only requirement is a prompt that clearly asks for a full draft essay on `{topic}`. Interpolating the topic with an f-string is the key move.
+:::
+
+## Exercise 2: `reflect_on_draft`
+
+::: {.callout-tip collapse="true"}
+## Show solution
+
+```python
+# EXERCISE FUNCTION: reflect_on_draft
+
+def reflect_on_draft(draft: str, model: str = "gpt-4o-mini") -> str:
+
+    ### START CODE HERE ###
+
+    prompt = f"""You are a critical writing reviewer. Read the essay draft below and
+provide constructive feedback in paragraph form.
+
+Comment on the essay's strengths, weaknesses, clarity, structure, and argument
+quality, and give concrete suggestions for improvement.
+
+Essay draft:
+{draft}"""
+
+    ### END CODE HERE ###
+
+    response = create_response(
+        model=model,
+        input=[{"role": "user", "content": prompt}],
+        temperature=1.0,
+    )
+
+    return response.output_text
+```
+
+Assign the model a reviewer role and ask for constructive, paragraph-form feedback on the interpolated `{draft}`.
+:::
+
+## Exercise 3: `revise_draft`
+
+::: {.callout-tip collapse="true"}
+## Show solution
+
+```python
+# EXERCISE FUNCTION: revise_draft
+
+def revise_draft(original_draft: str, reflection: str, model: str = "gpt-4o-mini") -> str:
+
+    ### START CODE HERE ###
+
+    prompt = f"""Revise the essay draft below by incorporating the reviewer feedback
+that follows it. Keep the original intent and topic, improve clarity, structure,
+and argumentation, and return only the full revised essay.
+
+Original draft:
+{original_draft}
+
+Reviewer feedback:
+{reflection}"""
+
+    response = create_response(
+        model=model,
+        input=[{"role": "user", "content": prompt}],
+        temperature=1.0,
+    )
+
+    ### END CODE HERE ###
+
+    return response.output_text
+```
+
+This exercise also asks you to make the `create_response` call yourself — it mirrors the call pattern from Exercises 1 and 2. The prompt must include both the original draft and the reflection so the model can connect feedback to text.
+:::

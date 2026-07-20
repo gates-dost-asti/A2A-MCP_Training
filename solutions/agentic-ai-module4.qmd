@@ -1,0 +1,35 @@
+---
+title: "Module 4 Try-out Guide – Component-Level Evals"
+---
+
+Notebook: [`tryout-1.ipynb`](<../Workshop Materials/Agentic AI/Module4/tryout-1.ipynb>)
+
+This module has no fill-in exercise. The "Try yourself!" section asks you to experiment with the research step (`find_references`) and its evaluation by editing three things: the `topic`, the `TOP_DOMAINS` preferred-source list, and the `min_ratio` threshold.
+
+## What to try
+
+::: {.callout-tip collapse="true"}
+## Show a worked example
+
+```python
+# ===  Try it yourself: topic, ratio & preferred domains ===
+
+topic = "CRISPR gene editing for rice crop improvement"  # local, relevant topic
+min_ratio = 0.5                                          # stricter: half must be preferred
+run_reflection = True
+
+TOP_DOMAINS = {
+    "wikipedia.org", "nature.com", "science.org", "arxiv.org",
+    "nasa.gov", "mit.edu", "stanford.edu", "harvard.edu",
+    "irri.org", "up.edu.ph", "dost.gov.ph",              # added domain-relevant sources
+}
+```
+
+What to observe when you re-run the cells:
+
+The eval computes the fraction of retrieved references whose domain is in `TOP_DOMAINS`. Raising `min_ratio` from 0.4 to 0.5 makes the check stricter, so a run that previously passed may now fail. Adding domains relevant to your topic (here, agriculture and Philippine research institutions) raises the measured ratio without changing the search itself, which illustrates the main lesson: an eval is only as meaningful as its ground truth. If the pass/fail outcome flips because of the metric definition rather than the output quality, the metric needs refining.
+:::
+
+## Why this matters
+
+Component-level evals let you catch failures at the step where they happen (retrieval, in this case) instead of debugging the whole pipeline from its final output. When you build your own agents, define a measurable quality bar for each step, exactly as `min_ratio` does for source quality here.

@@ -1,0 +1,18 @@
+---
+title: "Model Context Protocol Track"
+---
+
+Six hands-on lessons that build from a plain tool-calling chatbot to a fully deployed remote MCP server. The chatbot lesson includes an exercise; the worked answer is on the [Solutions](solutions/index.qmd) page.
+
+## Lessons
+
+| Lesson | Notebook |
+|--------|----------|
+| 1 – Research ChatBot (tool calling) | [chatbot_example](<Workshop Materials/MCP/1-ChatBot/chatbot_example.ipynb>) |
+| 2 – Building an MCP Server | [mcpserver_example](<Workshop Materials/MCP/2-MCPServer/mcpserver_example.ipynb>) |
+| 3 – Building an MCP Client | [mcpclient_example](<Workshop Materials/MCP/3-MCPClient/mcpclient_example.ipynb>) |
+| 4 – Connecting to Reference Servers | [mcpclient_example](<Workshop Materials/MCP/4-ConnectingToReference/mcpclient_example.ipynb>) |
+| 5 – Prompts and Resources | [mcpserver_example](<Workshop Materials/MCP/5-PromptandResource/mcpserver_example.ipynb>) |
+| 6 – Deploying a Remote Server | [mcpchatbot_example](<Workshop Materials/MCP/6-DeployingRemote/mcpchatbot_example.ipynb>) |
+
+**Lecture deck:** [Model Context Protocol (PDF)](<Presentations/06 - Model Context Protocol.pdf>)

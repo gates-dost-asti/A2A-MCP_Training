@@ -1,0 +1,33 @@
+# Consolidated requirements for all A2A & MCP Training notebooks
+# Python 3.11–3.13 required (beeai-framework supports >=3.11,<3.14)
+
+# Core LLM client + helpers
+openai==2.45.0
+requests
+pydantic
+python-dotenv
+
+# Notebooks / display
+jupyter
+nest-asyncio
+pandas
+matplotlib
+tabulate
+orjson
+
+# Research tools (Agentic AI track)
+arxiv
+tavily-python
+wikipedia-api
+duckdb
+
+# MCP track
+mcp
+uv
+
+# A2A track
+a2a-sdk
+openai-agents
+beeai-framework
+httpx
+uvicorn

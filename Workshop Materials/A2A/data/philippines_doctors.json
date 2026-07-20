@@ -1,0 +1,390 @@
+[
+    {
+        "id": "DOC001",
+        "name": "Dr. Maria Santos",
+        "specialty": "Cardiology",
+        "address": {
+            "street": "1247 Heart Center Avenue",
+            "city": "Quezon City",
+            "state": "Metro Manila",
+            "zip_code": "1100"
+        },
+        "phone": "(404) 555-2847",
+        "email": "m.santos@manilaheart.com",
+        "years_experience": 15,
+        "board_certified": true,
+        "hospital_affiliations": [
+            "Philippine Heart Center",
+            "St. Luke's Medical Center - Quezon City"
+        ],
+        "education": {
+            "medical_school": "University of the Philippines College of Medicine",
+            "residency": "Philippine General Hospital",
+            "fellowship": "None"
+        },
+        "languages": [
+            "Filipino",
+            "English",
+            "Cebuano"
+        ],
+        "accepts_new_patients": true,
+        "insurance_accepted": [
+            "PhilHealth",
+            "Maxicare",
+            "Intellicare",
+            "Medicard"
+        ]
+    },
+    {
+        "id": "DOC002",
+        "name": "Dr. Juan Dela Cruz",
+        "specialty": "Pediatrics",
+        "address": {
+            "street": "892 Children's Medical Plaza, Suite 205",
+            "city": "Cebu City",
+            "state": "Cebu",
+            "zip_code": "6000"
+        },
+        "phone": "(602) 555-9134",
+        "email": "j.delacruz@cebupediatrics.com",
+        "years_experience": 8,
+        "board_certified": true,
+        "hospital_affiliations": [
+            "Cebu Doctors' University Hospital",
+            "Vicente Sotto Memorial Medical Center"
+        ],
+        "education": {
+            "medical_school": "University of Santo Tomas Faculty of Medicine and Surgery",
+            "residency": "Philippine Children's Medical Center",
+            "fellowship": "None"
+        },
+        "languages": [
+            "Filipino",
+            "English"
+        ],
+        "accepts_new_patients": true,
+        "insurance_accepted": [
+            "PhilHealth",
+            "Maxicare",
+            "Etiqa",
+            "Cocolife Healthcare"
+        ]
+    },
+    {
+        "id": "DOC003",
+        "name": "Dr. Angela Reyes",
+        "specialty": "Dermatology",
+        "address": {
+            "street": "3401 Roxas Boulevard",
+            "city": "Davao City",
+            "state": "Davao del Sur",
+            "zip_code": "8000"
+        },
+        "phone": "(310) 555-7623",
+        "email": "a.reyes@skinhealthph.com",
+        "years_experience": 12,
+        "board_certified": true,
+        "hospital_affiliations": [
+            "The Medical City",
+            "Makati Medical Center"
+        ],
+        "education": {
+            "medical_school": "Ateneo School of Medicine and Public Health",
+            "residency": "The Medical City",
+            "fellowship": "None"
+        },
+        "languages": [
+            "Filipino",
+            "English",
+            "Mandarin"
+        ],
+        "accepts_new_patients": false,
+        "insurance_accepted": [
+            "PhilHealth",
+            "Intellicare",
+            "Medicard",
+            "Avega"
+        ]
+    },
+    {
+        "id": "DOC004",
+        "name": "Dr. Michael Garcia",
+        "specialty": "Orthopedic Surgery",
+        "address": {
+            "street": "1156 Sports Medicine Plaza",
+            "city": "Iloilo City",
+            "state": "Iloilo",
+            "zip_code": "5000"
+        },
+        "phone": "(303) 555-4892",
+        "email": "m.garcia@orthocareph.com",
+        "years_experience": 22,
+        "board_certified": true,
+        "hospital_affiliations": [
+            "Philippine Orthopedic Center",
+            "St. Luke's Medical Center - Global City"
+        ],
+        "education": {
+            "medical_school": "University of the East Ramon Magsaysay Memorial Medical Center",
+            "residency": "Philippine Orthopedic Center",
+            "fellowship": "None"
+        },
+        "languages": [
+            "Filipino",
+            "English"
+        ],
+        "accepts_new_patients": true,
+        "insurance_accepted": [
+            "PhilHealth",
+            "Maxicare",
+            "Medicard",
+            "Etiqa"
+        ]
+    },
+    {
+        "id": "DOC005",
+        "name": "Dr. Pearl Villanueva",
+        "specialty": "Internal Medicine",
+        "address": {
+            "street": "2847 Medical Arts Building",
+            "city": "Baguio",
+            "state": "Benguet",
+            "zip_code": "2600"
+        },
+        "phone": "(713) 555-3651",
+        "email": "p.villanueva@internalmedph.com",
+        "years_experience": 6,
+        "board_certified": true,
+        "hospital_affiliations": [
+            "Asian Hospital and Medical Center",
+            "Muntinlupa Medical Center"
+        ],
+        "education": {
+            "medical_school": "Cebu Institute of Medicine",
+            "residency": "Cebu Doctors' University Hospital",
+            "fellowship": "None"
+        },
+        "languages": [
+            "Filipino",
+            "English",
+            "Hindi"
+        ],
+        "accepts_new_patients": true,
+        "insurance_accepted": [
+            "PhilHealth",
+            "Intellicare",
+            "Medicard",
+            "ValuCare"
+        ]
+    },
+    {
+        "id": "DOC006",
+        "name": "Dr. Robert Tan",
+        "specialty": "Neurology",
+        "address": {
+            "street": "567 Brain & Spine Center",
+            "city": "Cagayan de Oro",
+            "state": "Misamis Oriental",
+            "zip_code": "9000"
+        },
+        "phone": "(206) 555-8274",
+        "email": "r.tan@neurocareph.com",
+        "years_experience": 18,
+        "board_certified": true,
+        "hospital_affiliations": [
+            "The Medical City",
+            "Cardinal Santos Medical Center"
+        ],
+        "education": {
+            "medical_school": "University of the Philippines College of Medicine",
+            "residency": "Philippine General Hospital",
+            "fellowship": "National Institutes of Health, Philippines"
+        },
+        "languages": [
+            "Filipino",
+            "English",
+            "Korean"
+        ],
+        "accepts_new_patients": false,
+        "insurance_accepted": [
+            "PhilHealth",
+            "Maxicare",
+            "Intellicare",
+            "Medicard"
+        ]
+    },
+    {
+        "id": "DOC007",
+        "name": "Dr. Lisa Mendoza",
+        "specialty": "Obstetrics & Gynecology",
+        "address": {
+            "street": "4392 Women's Health Center, Floor 3",
+            "city": "Pasig",
+            "state": "Metro Manila",
+            "zip_code": "1600"
+        },
+        "phone": "(305) 555-1847",
+        "email": "l.mendoza@womenshealthph.com",
+        "years_experience": 14,
+        "board_certified": true,
+        "hospital_affiliations": [
+            "Philippine General Hospital",
+            "Dr. Jose Fabella Memorial Hospital"
+        ],
+        "education": {
+            "medical_school": "University of Santo Tomas Faculty of Medicine and Surgery",
+            "residency": "University of Santo Tomas Hospital",
+            "fellowship": "None"
+        },
+        "languages": [
+            "Filipino",
+            "English"
+        ],
+        "accepts_new_patients": true,
+        "insurance_accepted": [
+            "PhilHealth",
+            "Maxicare",
+            "Etiqa",
+            "Avega"
+        ]
+    },
+    {
+        "id": "DOC008",
+        "name": "Dr. David Ramos",
+        "specialty": "Emergency Medicine",
+        "address": {
+            "street": "789 Emergency Services Drive",
+            "city": "Makati",
+            "state": "Metro Manila",
+            "zip_code": "1229"
+        },
+        "phone": "(312) 555-9567",
+        "email": "d.ramos@emergencycareph.com",
+        "years_experience": 11,
+        "board_certified": true,
+        "hospital_affiliations": [
+            "Makati Medical Center",
+            "The Medical City"
+        ],
+        "education": {
+            "medical_school": "West Visayas State University College of Medicine",
+            "residency": "Western Visayas Medical Center",
+            "fellowship": "None"
+        },
+        "languages": [
+            "Filipino",
+            "English"
+        ],
+        "accepts_new_patients": true,
+        "insurance_accepted": [
+            "PhilHealth",
+            "All major HMOs",
+            "Self-pay"
+        ]
+    },
+    {
+        "id": "DOC009",
+        "name": "Dr. Amanda Bautista",
+        "specialty": "Psychiatry",
+        "address": {
+            "street": "1523 Wellness Avenue, Suite 401",
+            "city": "Taguig",
+            "state": "Metro Manila",
+            "zip_code": "1634"
+        },
+        "phone": "(617) 555-7412",
+        "email": "a.bautista@mindhealthph.com",
+        "years_experience": 9,
+        "board_certified": true,
+        "hospital_affiliations": [
+            "National Center for Mental Health",
+            "Philippine General Hospital"
+        ],
+        "education": {
+            "medical_school": "Ateneo School of Medicine and Public Health",
+            "residency": "National Center for Mental Health",
+            "fellowship": "None"
+        },
+        "languages": [
+            "Filipino",
+            "English"
+        ],
+        "accepts_new_patients": true,
+        "insurance_accepted": [
+            "PhilHealth",
+            "Maxicare",
+            "Medicard",
+            "Intellicare"
+        ]
+    },
+    {
+        "id": "DOC010",
+        "name": "Dr. Christopher Lim",
+        "specialty": "Oncology",
+        "address": {
+            "street": "2156 Cancer Care Center",
+            "city": "Bacolod",
+            "state": "Negros Occidental",
+            "zip_code": "6100"
+        },
+        "phone": "(615) 555-6284",
+        "email": "c.lim@cancercareph.com",
+        "years_experience": 16,
+        "board_certified": true,
+        "hospital_affiliations": [
+            "St. Luke's Medical Center - Global City",
+            "National Kidney and Transplant Institute"
+        ],
+        "education": {
+            "medical_school": "University of the Philippines College of Medicine",
+            "residency": "Philippine General Hospital",
+            "fellowship": "St. Luke's Medical Center - Global City"
+        },
+        "languages": [
+            "Filipino",
+            "English"
+        ],
+        "accepts_new_patients": false,
+        "insurance_accepted": [
+            "PhilHealth",
+            "Maxicare",
+            "Intellicare",
+            "Medicard"
+        ]
+    },
+    {
+        "id": "DOC011",
+        "name": "Dr. Mary Grace Piattos",
+        "specialty": "Psychiatry",
+        "address": {
+            "street": "1201 Mind Health Center, Suite 210",
+            "city": "Caloocan",
+            "state": "Metro Manila",
+            "zip_code": "1000"
+        },
+        "phone": "(512) 555-0199",
+        "email": "mg.piattos@mindhealthph.com",
+        "years_experience": 13,
+        "board_certified": true,
+        "hospital_affiliations": [
+            "National Center for Mental Health",
+            "Asian Hospital and Medical Center"
+        ],
+        "education": {
+            "medical_school": "Far Eastern University Dr. Nicanor Reyes Medical Foundation",
+            "residency": "National Center for Mental Health",
+            "fellowship": "None"
+        },
+        "languages": [
+            "Filipino",
+            "English"
+        ],
+        "accepts_new_patients": true,
+        "insurance_accepted": [
+            "PhilHealth",
+            "Maxicare",
+            "Medicard",
+            "Etiqa"
+        ]
+    }
+]

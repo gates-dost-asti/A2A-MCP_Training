@@ -1,0 +1,17 @@
+---
+title: "Exercise Solutions"
+---
+
+Worked answers for every exercise in the training. Each solution is collapsed by default — try the exercise yourself before expanding it.
+
+| Page | Covers |
+|------|--------|
+| [Module 2 – Reflection](agentic-ai-module2.qmd) | `generate_draft`, `reflect_on_draft`, `revise_draft` |
+| [Module 3 – Tool Use](agentic-ai-module3.qmd) | `generate_research_report_with_tools`, `reflection_and_rewrite`, `convert_report_to_html` |
+| [Module 4 – Try-out Guide](agentic-ai-module4.qmd) | Experimenting with the component-level eval |
+| [Module 5 – Autonomous Agents](agentic-ai-module5.qmd) | `planner_agent`, `research_agent`, `writer_agent`, `editor_agent` |
+| [MCP ChatBot](mcp-chatbot.qmd) | `process_query` |
+
+::: {.callout-important}
+Prompts are the point. Most of these exercises test your ability to write a clear prompt, not exotic code. The prompts shown here are reference answers; any prompt that fulfills the stated objective is acceptable.
+:::
