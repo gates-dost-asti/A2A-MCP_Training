@@ -403,14 +403,14 @@
     "href": "setup.html#prerequisites",
     "title": "Prerequisites & Installation",
     "section": "Prerequisites",
-    "text": "Prerequisites\nWorking knowledge of Python (functions, dictionaries, f-strings) and basic familiarity with Jupyter notebooks. No prior experience with agents, MCP, or A2A is assumed.\nYour machine needs:\n\n\n\nRequirement\nNotes\n\n\n\n\nPython 3.11 – 3.13\nbeeai-framework (A2A track) supports 3.11 up to, but not including, 3.14 (PyPI); the MCP and A2A SDKs need 3.10+ (mcp, a2a-sdk)\n\n\nJupyter\nJupyterLab, Jupyter Notebook, or VS Code with the Jupyter extension\n\n\nGit\nTo clone the materials\n\n\nAn OpenVPN-compatible client\nFor the training-room LLM gateway (see below)"
+    "text": "Prerequisites\nWorking knowledge of Python (functions, dictionaries, f-strings) and basic familiarity with Jupyter notebooks. No prior experience with agents, MCP, or A2A is assumed.\nYour machine needs:\n\n\n\n\n\n\n\nRequirement\nNotes\n\n\n\n\nVS Code\nWith the Python and Jupyter extensions\n\n\nMiniconda\nTo create an isolated Python 3.12 environment\n\n\nNode.js\nRequired by some MCP tooling\n\n\nGit\nTo clone the materials\n\n\nAn OpenVPN-compatible client\nFor the training-room LLM gateway (see below)"
   },
   {
     "objectID": "setup.html#installation",
     "href": "setup.html#installation",
     "title": "Prerequisites & Installation",
     "section": "Installation",
-    "text": "Installation\n\n1. Clone the materials\ngit clone https://github.com/gates-dost-asti/A2A-MCP_Training.git\ncd A2A-MCP_Training\n\n\n2. Create a virtual environment\n\nmacOS / LinuxWindows\n\n\npython3 -m venv .venv\nsource .venv/bin/activate\n\n\npython -m venv .venv\n.venv\\Scripts\\activate\n\n\n\n\n\n3. Install the packages\nAll notebook dependencies are consolidated in one file:\npip install -r requirements.txt\nIf you prefer installing per track, the first cell of each notebook lists its own pip install line.\n\n\n4. Register the environment with Jupyter\npython -m ipykernel install --user --name a2a-mcp-training\nThen pick the a2a-mcp-training kernel when opening any workshop notebook."
+    "text": "Installation\n\n1. Install VS Code\nDownload and install VS Code from code.visualstudio.com.\nThen add these extensions (Extensions panel, or Cmd/Ctrl+Shift+X):\n\nPython (Microsoft)\nJupyter (Microsoft)\n\n\n\n2. Install Miniconda\nDownload the installer for your OS from the Miniconda docs and run it. Restart your terminal (or VS Code) afterward so the conda command is available.\n\n\n3. Clone the materials\ngit clone https://github.com/gates-dost-asti/A2A-MCP_Training.git\ncd A2A-MCP_Training\n\n\n4. Create the conda environment\nconda create -n a2a-mcp-training python=3.12\nconda activate a2a-mcp-training\npip install -r requirements.txt\n\n\n\n\n\n\nNote\n\n\n\nrequirements.txt is still being finalized and may change before the workshop — re-run pip install -r requirements.txt if you’re told it’s been updated.\n\n\n\n\n5. Register the environment with Jupyter\npython -m ipykernel install --user --name a2a-mcp-training\nThen pick the a2a-mcp-training kernel when opening any workshop notebook in VS Code or JupyterLab.\n\n\n6. Install Node.js\nDownload the LTS installer from nodejs.org and run it. Verify with:\nnode -v"
   },
   {
     "objectID": "setup.html#connecting-to-the-llm-gateway",
@@ -473,7 +473,7 @@
     "href": "index.html",
     "title": "Agentic AI: A2A & MCP Training",
     "section": "",
-    "text": "27 July 2026, 9:00 AM – 5:00 PM Training Room, DOST-ASTI, Diliman, Quezon City\nThis site hosts all materials for the one-day training on Agentic AI, the Model Context Protocol (MCP), and the Agent-to-Agent (A2A) Protocol: hands-on notebooks, lecture decks, and exercise solutions.\nOfficial Program (PDF) Setup Guide Browse Materials"
+    "text": "27 July 2026, 9:00 AM – 5:00 PM Training Room, DOST-ASTI, Diliman, Quezon City\nThis site hosts all materials for the one-day training on Agentic AI, the Model Context Protocol (MCP), and the Agent-to-Agent (A2A) Protocol: hands-on notebooks, lecture decks, and exercise solutions.\nOfficial Program (PDF) Browse Materials"
   },
   {
     "objectID": "index.html#program",
