@@ -1,0 +1,91 @@
+---
+title: "Prerequisites & Installation"
+---
+
+Complete this setup before the workshop so the hands-on sessions start smoothly.
+
+## Prerequisites
+
+Working knowledge of Python (functions, dictionaries, f-strings) and basic familiarity with Jupyter notebooks. No prior experience with agents, MCP, or A2A is assumed.
+
+Your machine needs:
+
+| Requirement | Notes |
+|-------------|-------|
+| VS Code | With the Python and Jupyter extensions |
+| Miniconda | To create an isolated Python 3.12 environment |
+| Node.js | Required by some MCP tooling |
+| Git | To clone the materials |
+| An OpenVPN-compatible client | For the training-room LLM gateway (see below) |
+
+## Installation
+
+### 1. Install VS Code
+
+Download and install VS Code from [code.visualstudio.com](https://code.visualstudio.com/).
+
+Then add these extensions (Extensions panel, or `Cmd/Ctrl+Shift+X`):
+
+- **Python** (Microsoft)
+- **Jupyter** (Microsoft)
+
+### 2. Install Miniconda
+
+Download the installer for your OS from the [Miniconda docs](https://docs.conda.io/en/latest/miniconda.html) and run it. Restart your terminal (or VS Code) afterward so the `conda` command is available.
+
+### 3. Clone the materials
+
+```bash
+git clone https://github.com/gates-dost-asti/A2A-MCP_Training.git
+cd A2A-MCP_Training
+```
+
+### 4. Create the conda environment
+
+```bash
+conda create -n a2a-mcp-training python=3.12
+conda activate a2a-mcp-training
+pip install -r requirements.txt
+```
+
+::: {.callout-note}
+`requirements.txt` is still being finalized and may change before the workshop — re-run `pip install -r requirements.txt` if you're told it's been updated.
+:::
+
+### 5. Register the environment with Jupyter
+
+```bash
+python -m ipykernel install --user --name a2a-mcp-training
+```
+
+Then pick the `a2a-mcp-training` kernel when opening any workshop notebook in VS Code or JupyterLab.
+
+### 6. Install Node.js
+
+Download the LTS installer from [nodejs.org](https://nodejs.org/) and run it. Verify with:
+
+```bash
+node -v
+```
+
+## Connecting to the LLM gateway
+
+The notebooks call language models through a local helper (`gates_openai.py`) that talks to an OpenAI-compatible gateway on the training network. During the workshop:
+
+1. Import the VPN profile provided by the facilitators into your OpenVPN-compatible client and connect.
+2. Verify connectivity by running the first few cells of any notebook — the sanity-check calls should return text.
+
+::: {.callout-warning}
+## Running the notebooks outside the training room
+
+The gateway is only reachable through the training VPN. To run the materials at home, edit `BASE_URL` in the track's `gates_openai.py` to point at your own OpenAI-compatible endpoint (for example, the official OpenAI API with your API key, or a local server such as Ollama's OpenAI-compatible endpoint).
+:::
+
+## Quick self-check
+
+Run this after setup; every import should succeed silently.
+
+```python
+import openai, mcp, a2a, arxiv, tavily, wikipediaapi, pydantic, nest_asyncio
+print("Setup OK")
+```
