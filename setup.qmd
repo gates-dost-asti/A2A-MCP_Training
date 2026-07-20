@@ -2,7 +2,7 @@
 title: "Prerequisites & Installation"
 ---
 
-Complete this setup before the workshop so the hands-on sessions start smoothly.
+Complete this setup before the workshop so the hands-on sessions start smoothly. Steps are the same on macOS and Windows except where noted.
 
 ## Prerequisites
 
@@ -22,25 +22,60 @@ Your machine needs:
 
 ### 1. Install VS Code
 
-Download and install VS Code from [code.visualstudio.com](https://code.visualstudio.com/).
+::: {.panel-tabset}
 
-Then add these extensions (Extensions panel, or `Cmd/Ctrl+Shift+X`):
+## macOS
+
+Download the macOS installer from [code.visualstudio.com](https://code.visualstudio.com/), open the `.zip`, and drag `Visual Studio Code.app` into **Applications**.
+
+## Windows
+
+Download the Windows installer (`.exe`) from [code.visualstudio.com](https://code.visualstudio.com/) and run it. On the setup screen, check **"Add to PATH"** so `code` works from the terminal.
+
+:::
+
+Then add these extensions in either OS (Extensions panel, or `Cmd/Ctrl+Shift+X`):
 
 - **Python** (Microsoft)
 - **Jupyter** (Microsoft)
 
 ### 2. Install Miniconda
 
-Download the installer for your OS from the [Miniconda docs](https://docs.conda.io/en/latest/miniconda.html) and run it. Restart your terminal (or VS Code) afterward so the `conda` command is available.
+::: {.panel-tabset}
+
+## macOS
+
+Download the macOS installer (`.pkg`, Apple Silicon or Intel as appropriate) from the [Miniconda docs](https://docs.conda.io/en/latest/miniconda.html) and run it. Then open a **new** Terminal window so `conda` is picked up.
+
+## Windows
+
+Download the Windows installer (`.exe`) from the [Miniconda docs](https://docs.conda.io/en/latest/miniconda.html) and run it. During setup, it's fine to leave "Add Miniconda3 to PATH" unchecked — instead, use the **Anaconda Prompt** (installed alongside Miniconda) for all commands below, or select the "Python (Miniconda3)" terminal profile in VS Code.
+
+:::
 
 ### 3. Clone the materials
+
+::: {.panel-tabset}
+
+## macOS (Terminal)
 
 ```bash
 git clone https://github.com/gates-dost-asti/A2A-MCP_Training.git
 cd A2A-MCP_Training
 ```
 
+## Windows (Anaconda Prompt)
+
+```powershell
+git clone https://github.com/gates-dost-asti/A2A-MCP_Training.git
+cd A2A-MCP_Training
+```
+
+:::
+
 ### 4. Create the conda environment
+
+The commands are identical on both platforms — just run them in Terminal on macOS or Anaconda Prompt on Windows:
 
 ```bash
 conda create -n a2a-mcp-training python=3.12
@@ -62,7 +97,19 @@ Then pick the `a2a-mcp-training` kernel when opening any workshop notebook in VS
 
 ### 6. Install Node.js
 
-Download the LTS installer from [nodejs.org](https://nodejs.org/) and run it. Verify with:
+::: {.panel-tabset}
+
+## macOS
+
+Download the macOS LTS installer (`.pkg`) from [nodejs.org](https://nodejs.org/) and run it.
+
+## Windows
+
+Download the Windows LTS installer (`.msi`) from [nodejs.org](https://nodejs.org/) and run it, keeping the default options (including "Add to PATH").
+
+:::
+
+Verify on either OS:
 
 ```bash
 node -v
