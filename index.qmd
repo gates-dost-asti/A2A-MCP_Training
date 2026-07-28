@@ -9,7 +9,7 @@ Training Room, DOST-ASTI, Diliman, Quezon City
 
 This site hosts all materials for the one-day training on Agentic AI, the Model Context Protocol (MCP), and the Agent-to-Agent (A2A) Protocol: hands-on notebooks, lecture decks, and exercise solutions.
 
-[Official Program (PDF)](<Program - A2A & MCP Training.pdf>){.btn .btn-primary} [Setup Guide](setup.qmd){.btn .btn-outline-primary} [Browse Materials](agentic-ai.qmd){.btn .btn-outline-primary}
+[Official Program (PDF)](<Program - A2A & MCP Training.pdf>){.btn .btn-primary} [Browse Materials](agentic-ai.qmd){.btn .btn-outline-primary}
 
 ## Program
 

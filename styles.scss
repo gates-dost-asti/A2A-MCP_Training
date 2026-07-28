@@ -1,51 +1,92 @@
 /*-- scss:defaults --*/
 
-// Brand palette from the GATES Program logomark, tuned for strong contrast.
-// Text/interactive colors are darkened enough to clear WCAG AA (4.5:1) against white.
-$gates-blue:        #2929f0; // was #1818f5 — primary links, headings, primary button (7.9:1)
-$gates-teal:        #07787d; // was #048b92 — secondary text/border/outline button (5.3:1)
-$gates-purple:      #bf5595; // was #a43678 — tertiary accent, still text-safe (4.2:1)
-$gates-teal-soft:   #2cdfe8; // decorative only: underlines, thin borders, hover fills
-$gates-orange:      #f89524; // was #fd8a06 — decorative accents (callouts, footer) — not for text
+// GATES brand palette — shared with the OneLab Workshop site so both
+// trainings read as one program. Text/interactive colors are darkened
+// enough to clear WCAG AA (4.5:1) against white.
+$gates-blue:        #2643d6; // primary accent, buttons, gradient
+$gates-blue-dark:   #14197a; // headings, nav/body links (7:1+ on white)
+$gates-purple:      #9c2d6e; // tertiary accent
+$gates-teal:        #0f8a7d; // secondary accent, outline button
+$gates-orange:      #f2941f; // decorative accent — not for body text
+$gates-bg:          #f4f6f8; // page background
 
 // Pale tints for backgrounds
-$blue-tint:   #e3e6fc;
-$teal-tint:   #dcf4f5;
+$blue-tint:   #e4e8fb;
+$teal-tint:   #dcf1ee;
 $orange-tint: #fdecd2;
-$purple-tint: #f6e6ef;
+$purple-tint: #f3e3ec;
+
+$gates-spectrum: linear-gradient(90deg, $gates-purple 0%, $gates-orange 35%, $gates-teal 68%, $gates-blue 100%);
 
 $primary:    $gates-blue;
 $secondary:  $gates-teal;
-$link-color: $gates-blue;
+$link-color: $gates-blue-dark;
+$body-bg:    $gates-bg;
 $body-color: #1a1a1a;
 
-// Navbar: solid brand-blue bar with white text/links
-$navbar-bg: $gates-blue;
-$navbar-fg: #ffffff;
-$navbar-hl: $gates-teal-soft;
+// Navbar: light bar, brand-colored text, gradient underline (set below)
+$navbar-bg: $gates-bg;
+$navbar-fg: $gates-blue-dark;
+$navbar-hl: $gates-orange;
 
 /*-- scss:rules --*/
 
 body {
   color: $body-color;
+  background-color: $gates-bg;
 }
 
 .navbar {
-  border-bottom: 3px solid darken($gates-blue, 12%);
+  background-color: $gates-bg !important;
+  border-bottom: 3px solid transparent;
+  border-image: $gates-spectrum 1;
   box-shadow: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  color: $gates-blue-dark;
+  font-weight: 700;
 }
 
 .navbar-brand img {
-  max-height: 40px;
-  background-color: #ffffff;
-  border-radius: 6px;
-  padding: 4px 10px;
+  max-height: 34px;
+}
+
+.navbar-nav .nav-link {
+  color: $gates-blue-dark !important;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem !important;
+  margin: 0 0.1rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(38, 67, 214, 0.08);
+  color: $gates-blue-dark !important;
+}
+
+.navbar-nav .nav-link.active {
+  color: $gates-orange !important;
+  background-color: $orange-tint;
+}
+
+.navbar .quarto-navbar-tools .bi,
+.navbar .quarto-navbar-tools a {
+  color: $gates-blue-dark !important;
+}
+
+.navbar .quarto-navbar-tools a:hover {
+  color: $gates-orange !important;
 }
 
 .btn-primary {
   background-color: $gates-blue;
   border-color: $gates-blue;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
 }
 .btn-primary:hover {
@@ -57,7 +98,7 @@ body {
   color: $gates-teal;
   border-color: $gates-teal;
   border-width: 2px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
 }
 .btn-outline-primary:hover {
@@ -67,13 +108,24 @@ body {
 }
 
 h1, h2, h3 {
-  color: $gates-blue;
+  color: $gates-blue-dark;
   font-weight: 700;
 }
 
 h4, h5, h6 {
   color: $gates-teal;
   font-weight: 700;
+}
+
+// Section headings get the same orange underline treatment as the
+// OneLab Workshop site's landing sections.
+.content h2,
+main h2 {
+  display: inline-block;
+  border-bottom: 3px solid $gates-orange;
+  padding-bottom: 0.2rem;
+  margin-top: 2rem;
+  margin-bottom: 1.1rem;
 }
 
 .callout-tip {
@@ -94,8 +146,13 @@ h4, h5, h6 {
   background-color: $orange-tint;
 }
 
+.callout-note {
+  border-left: 5px solid $gates-blue !important;
+  background-color: $blue-tint;
+}
+
 a {
-  color: $gates-blue;
+  color: $gates-blue-dark;
   text-decoration-thickness: 1.5px;
 }
 a:hover {
@@ -103,8 +160,10 @@ a:hover {
 }
 
 .page-footer {
-  border-top: 2px solid $gates-orange;
-  color: #444;
+  border-top: 3px solid transparent;
+  border-image: $gates-spectrum 1;
+  color: #555;
+  background-color: $gates-bg;
 }
 
 table {
@@ -114,10 +173,51 @@ table {
     font-weight: 700;
   }
   td, th {
-    border-color: #ccc;
+    border-color: #ddd;
   }
 }
 
 code {
   color: $gates-purple;
+}
+
+// Main content sits on a white card over the light page background,
+// matching the OneLab Workshop site's card-on-tint layout.
+main.content {
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  padding: 2rem 2.5rem !important;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+// "Tracks" (and any future Bootstrap grid) columns become accent-topped
+// cards instead of plain text columns.
+.grid > [class*="g-col"] {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  border-top: 4px solid $gates-blue;
+}
+
+.grid > [class*="g-col"]:nth-child(2) {
+  border-top-color: $gates-teal;
+}
+
+.grid > [class*="g-col"]:nth-child(3) {
+  border-top-color: $gates-purple;
+}
+
+.grid > [class*="g-col"] h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+// Tabset (used on the setup page) picks up the orange accent too.
+.panel-tabset .nav-tabs .nav-link.active {
+  color: $gates-orange;
+  border-color: #dee2e6 #dee2e6 #fff;
+  font-weight: 700;
 }
