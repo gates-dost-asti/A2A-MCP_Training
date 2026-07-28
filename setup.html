@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9cecce8d088033b10a7113ba1f641c4d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9e9344e409805dff8c2c4dadf38039a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -185,12 +185,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
   <ul class="collapse">
-  <li><a href="#install-vs-code" id="toc-install-vs-code" class="nav-link" data-scroll-target="#install-vs-code">1. Install VS Code</a></li>
-  <li><a href="#install-miniconda" id="toc-install-miniconda" class="nav-link" data-scroll-target="#install-miniconda">2. Install Miniconda</a></li>
-  <li><a href="#clone-the-materials" id="toc-clone-the-materials" class="nav-link" data-scroll-target="#clone-the-materials">3. Clone the materials</a></li>
-  <li><a href="#create-the-conda-environment" id="toc-create-the-conda-environment" class="nav-link" data-scroll-target="#create-the-conda-environment">4. Create the conda environment</a></li>
-  <li><a href="#register-the-environment-with-jupyter" id="toc-register-the-environment-with-jupyter" class="nav-link" data-scroll-target="#register-the-environment-with-jupyter">5. Register the environment with Jupyter</a></li>
-  <li><a href="#install-node.js" id="toc-install-node.js" class="nav-link" data-scroll-target="#install-node.js">6. Install Node.js</a></li>
+  <li><a href="#clone-the-materials" id="toc-clone-the-materials" class="nav-link" data-scroll-target="#clone-the-materials">1. Clone the materials</a></li>
+  <li><a href="#create-a-virtual-environment" id="toc-create-a-virtual-environment" class="nav-link" data-scroll-target="#create-a-virtual-environment">2. Create a virtual environment</a></li>
+  <li><a href="#install-the-packages" id="toc-install-the-packages" class="nav-link" data-scroll-target="#install-the-packages">3. Install the packages</a></li>
+  <li><a href="#register-the-environment-with-jupyter" id="toc-register-the-environment-with-jupyter" class="nav-link" data-scroll-target="#register-the-environment-with-jupyter">4. Register the environment with Jupyter</a></li>
   </ul></li>
   <li><a href="#connecting-to-the-llm-gateway" id="toc-connecting-to-the-llm-gateway" class="nav-link" data-scroll-target="#connecting-to-the-llm-gateway">Connecting to the LLM gateway</a></li>
   <li><a href="#quick-self-check" id="toc-quick-self-check" class="nav-link" data-scroll-target="#quick-self-check">Quick self-check</a></li>
@@ -219,16 +217,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Complete this setup before the workshop so the hands-on sessions start smoothly. Steps are the same on macOS and Windows except where noted.</p>
+<p>Complete this setup before the workshop so the hands-on sessions start smoothly.</p>
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <p>Working knowledge of Python (functions, dictionaries, f-strings) and basic familiarity with Jupyter notebooks. No prior experience with agents, MCP, or A2A is assumed.</p>
 <p>Your machine needs:</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 65%">
-<col style="width: 35%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Requirement</th>
@@ -237,22 +231,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>VS Code</td>
-<td>With the Python and Jupyter extensions</td>
+<td>Python 3.11 – 3.13</td>
+<td><code>beeai-framework</code> (A2A track) supports 3.11 up to, but not including, 3.14 (<a href="https://pypi.org/project/beeai-framework/">PyPI</a>); the MCP and A2A SDKs need 3.10+ (<a href="https://pypi.org/project/mcp/">mcp</a>, <a href="https://pypi.org/project/a2a-sdk/">a2a-sdk</a>)</td>
 </tr>
 <tr class="even">
-<td>Miniconda</td>
-<td>To create an isolated Python 3.12 environment</td>
+<td>Jupyter</td>
+<td>JupyterLab, Jupyter Notebook, or VS Code with the Jupyter extension</td>
 </tr>
 <tr class="odd">
-<td>Node.js</td>
-<td>Required by some MCP tooling</td>
-</tr>
-<tr class="even">
 <td>Git</td>
 <td>To clone the materials</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>An OpenVPN-compatible client</td>
 <td>For the training-room LLM gateway (see below)</td>
 </tr>
@@ -261,95 +251,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="installation" class="level2">
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<section id="install-vs-code" class="level3">
-<h3 class="anchored" data-anchor-id="install-vs-code">1. Install VS Code</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Download the macOS installer from <a href="https://code.visualstudio.com/">code.visualstudio.com</a>, open the <code>.zip</code>, and drag <code>Visual Studio Code.app</code> into <strong>Applications</strong>.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Download the Windows installer (<code>.exe</code>) from <a href="https://code.visualstudio.com/">code.visualstudio.com</a> and run it. On the setup screen, check <strong>“Add to PATH”</strong> so <code>code</code> works from the terminal.</p>
-</div>
-</div>
-</div>
-<p>Then add these extensions in either OS (Extensions panel, or <code>Cmd/Ctrl+Shift+X</code>):</p>
-<ul>
-<li><strong>Python</strong> (Microsoft)</li>
-<li><strong>Jupyter</strong> (Microsoft)</li>
-</ul>
-</section>
-<section id="install-miniconda" class="level3">
-<h3 class="anchored" data-anchor-id="install-miniconda">2. Install Miniconda</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>Download the macOS installer (<code>.pkg</code>, Apple Silicon or Intel as appropriate) from the <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda docs</a> and run it. Then open a <strong>new</strong> Terminal window so <code>conda</code> is picked up.</p>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Download the Windows installer (<code>.exe</code>) from the <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda docs</a> and run it. During setup, it’s fine to leave “Add Miniconda3 to PATH” unchecked — instead, use the <strong>Anaconda Prompt</strong> (installed alongside Miniconda) for all commands below, or select the “Python (Miniconda3)” terminal profile in VS Code.</p>
-</div>
-</div>
-</div>
-</section>
 <section id="clone-the-materials" class="level3">
-<h3 class="anchored" data-anchor-id="clone-the-materials">3. Clone the materials</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">macOS (Terminal)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Windows (Anaconda Prompt)</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<h3 class="anchored" data-anchor-id="clone-the-materials">1. Clone the materials</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/gates-dost-asti/A2A-MCP_Training.git</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> A2A-MCP_Training</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="create-a-virtual-environment" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-virtual-environment">2. Create a virtual environment</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">macOS / Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Windows</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> venv .venv</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>git clone https<span class="op">://</span>github<span class="op">.</span><span class="fu">com</span><span class="op">/</span>gates-dost-asti<span class="op">/</span>A2A-MCP_Training<span class="op">.</span><span class="fu">git</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cd</span> A2A-MCP_Training</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m venv <span class="op">.</span><span class="fu">venv</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">venv</span>\Scripts\activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </section>
-<section id="create-the-conda-environment" class="level3">
-<h3 class="anchored" data-anchor-id="create-the-conda-environment">4. Create the conda environment</h3>
-<p>The commands are identical on both platforms — just run them in Terminal on macOS or Anaconda Prompt on Windows:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> a2a-mcp-training python=3.12</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate a2a-mcp-training</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>requirements.txt</code> is still being finalized and may change before the workshop — re-run <code>pip install -r requirements.txt</code> if you’re told it’s been updated.</p>
-</div>
-</div>
+<section id="install-the-packages" class="level3">
+<h3 class="anchored" data-anchor-id="install-the-packages">3. Install the packages</h3>
+<p>All notebook dependencies are consolidated in one file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you prefer installing per track, the first cell of each notebook lists its own <code>pip install</code> line.</p>
 </section>
 <section id="register-the-environment-with-jupyter" class="level3">
-<h3 class="anchored" data-anchor-id="register-the-environment-with-jupyter">5. Register the environment with Jupyter</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="at">--user</span> <span class="at">--name</span> a2a-mcp-training</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then pick the <code>a2a-mcp-training</code> kernel when opening any workshop notebook in VS Code or JupyterLab.</p>
-</section>
-<section id="install-node.js" class="level3">
-<h3 class="anchored" data-anchor-id="install-node.js">6. Install Node.js</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
-<p>Download the macOS LTS installer (<code>.pkg</code>) from <a href="https://nodejs.org/">nodejs.org</a> and run it.</p>
-</div>
-<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
-<p>Download the Windows LTS installer (<code>.msi</code>) from <a href="https://nodejs.org/">nodejs.org</a> and run it, keeping the default options (including “Add to PATH”).</p>
-</div>
-</div>
-</div>
-<p>Verify on either OS:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 class="anchored" data-anchor-id="register-the-environment-with-jupyter">4. Register the environment with Jupyter</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="at">--user</span> <span class="at">--name</span> a2a-mcp-training</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then pick the <code>a2a-mcp-training</code> kernel when opening any workshop notebook.</p>
 </section>
 </section>
 <section id="connecting-to-the-llm-gateway" class="level2">
